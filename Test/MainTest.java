@@ -60,4 +60,11 @@ assertArrayEquals(expected2,arr.getY(),0.001);
         double res=main.average(arr);
         assertEquals(expected,res);
     }
+    @Test
+    void testSum(){
+    double expected=12;
+        double[] arr={1.0,2.0,3.0,6.0};
+    double res=main.sum(arr);
+    assertEquals(expected,res);
+    }
 }
