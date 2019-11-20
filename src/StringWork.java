@@ -4,6 +4,8 @@ String s1 = "abcd#gh&l{";
 var8(s1);
     }
 
+
+//11
     public static void var8(String str) {
         String str2=null;
         StringBuilder sb = new StringBuilder();
