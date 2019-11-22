@@ -1,23 +1,26 @@
 public class StringWork {
     public static void main(String[] args) {
-        String s1 = "abcd#gh&l{";
+        String s1 = "a bc d#gh   &l{";
         var8(s1);
     }
 
-    public static void var8(String str) {
+    public static String var8(String str) {
         String str2 = null;
         StringBuilder sb = new StringBuilder();
         System.out.println("Unmodified:" + str);
+        // sb.append(str.charAt(0));
         for (int i = 0; i < str.length(); i++) {
-            if (Character.isLetterOrDigit(str.charAt(i))) {
+            if (Character.isLetter(str.charAt(i))) {
                 sb.append(str.charAt(i));
-                str2 = sb.toString();
-                str2 = str2.replace("", " ").trim();
-
             }
 
+            else if(Character.isWhitespace(str.charAt(i))&&
+                    (i==0||Character.isWhitespace(str.charAt(i-1)))){
+                sb.append(str.charAt(i));
+            }
         }
-        System.out.println("Modified:" + str2);
+        System.out.println(sb.toString());
+ return sb.toString();
 
     }
 }
